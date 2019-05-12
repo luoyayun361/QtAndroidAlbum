@@ -15,8 +15,7 @@ QList<AlbumInfo> AndroidJniInterface::getPhotoAlbumInfo()
 {
     QList<AlbumInfo> abInfoList;
     QAndroidJniObject string = QAndroidJniObject::callStaticObjectMethod("com/lynn/album/MainActivity" ,
-                                                                         "getPhotoAlbumInfo",
-                                                                         "()Ljava/lang/String;");
+                                                                         "getPhotoAlbumInfo",                                                                      "()Ljava/lang/String;");
     QStringList albumInfoList = string.toString().split("#");
     albumInfoList.removeLast();//最后一个为空
     foreach (QString info, albumInfoList) {
